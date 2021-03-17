@@ -7,4 +7,10 @@ const server = express();
 server.use(express.json());
 server.use('/api/schemes', SchemeRouter);
 
+server.get('*', (req, res) => {
+    res.status(200).json({
+        message: 'The API Lives'
+    })
+})
+
 module.exports = server;
